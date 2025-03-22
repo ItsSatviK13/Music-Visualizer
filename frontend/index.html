@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Music Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/icons/play.svg">
+</head>
+<body>
+  <div id="app">
+    <!-- Navbar -->
+    <header id="navbar">
+      <h1>AI Music Visualizer</h1>
+      <div class="navbar-controls">
+        <button id="theme-toggle">Toggle Dark/Light Mode</button>
+        <button id="spotify-login">Login with Spotify</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Visualizer Canvas -->
+      <div id="visualizer"></div>
+
+      <!-- Player Controls -->
+      <div id="player-controls">
+        <!-- Local Music Upload -->
+        <div class="control-group">
+          <label for="local-music" class="file-upload">
+            <span>Upload Music</span>
+            <input type="file" id="local-music" accept=".mp3,.wav" multiple>
+          </label>
+        </div>
+
+        <!-- Playback Controls -->
+        <div class="control-group">
+          <button id="play" class="control-button">
+            <img src="assets/icons/play.svg" alt="Play">
+          </button>
+          <button id="pause" class="control-button" style="display: none;">
+            <img src="assets/icons/pause.svg" alt="Pause">
+          </button>
+          <button id="skip" class="control-button">
+            <img src="assets/icons/skip.svg" alt="Skip">
+          </button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="control-group">
+          <input type="range" id="progress-bar" value="0">
+          <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="control-group">
+          <button id="mute" class="control-button">
+            <img src="assets/icons/volume.svg" alt="Volume">
+          </button>
+          <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1">
+        </div>
+
+        <!-- YouTube URL Input -->
+        <div class="control-group">
+          <input type="text" id="youtube-url" placeholder="Enter YouTube URL">
+          <button id="play-youtube">Play YouTube</button>
+        </div>
+      </div>
+
+      <!-- Song Metadata -->
+      <div id="song-metadata">
+        <img id="album-artwork" src="assets/images/placeholder-artwork.jpg" alt="Album Artwork">
+        <div id="song-info">
+          <h2 id="song-title">Song Title</h2>
+          <p id="song-artist">Artist Name</p>
+        </div>
+      </div>
+
+      <!-- Lyrics Section -->
+      <div id="lyrics-section">
+        <h3>Lyrics</h3>
+        <div id="lyrics-container">
+          <p id="lyrics">Lyrics will appear here...</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
